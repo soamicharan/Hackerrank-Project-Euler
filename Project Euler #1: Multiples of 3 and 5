@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    long long unsigned int N,a,b,c=0,T;
+    scanf("%llu",&T);
+    for(a=1;a<=T;a++)
+    {
+       scanf("%llu",&N);
+        for(b=1;b<N;b++)
+            {
+            if(b%3==0||b%5==0)
+                {
+                c=c+b;
+            }
+            else
+                continue;
+        }
+           printf("%llu\n",c);
+        c=0;
+    }
+    return 0;
+}
