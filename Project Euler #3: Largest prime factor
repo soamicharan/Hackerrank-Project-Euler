@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    typedef unsigned long ulong;
+    ulong large(ulong b, ulong c,ulong * res )
+    {
+        if(b%c!=0){ c+=1;}
+        if(b==1){return 0;}
+        if(b%c==0)
+            {
+                b=b/c;
+        *res=c;
+        return large(b,2,res);}
+        return large(b,c,res);
+    }
+int T;
+    scanf("%d",&T);
+ulong res;
+ulong *ans=&res;
+
+
+   while(T--)
+   {
+       ulong N;
+       scanf("%lu",&N);
+       large(N,2,&res);
+       printf("%lu\n",*ans);
+   }
+    return 0;
+}
