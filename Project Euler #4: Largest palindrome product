@@ -1,0 +1,64 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+  int a,T,b,d,f1,f2,f3,f4,f5,f6,temp1,temp2,temp3,temp4,temp5,temp6,l=0,n,N;
+    scanf("%d",&T);
+    while(T--)
+    {
+    scanf("%d",&N);
+        if(N<101101||N>1000000)
+    {
+            printf("0");
+        return 0;
+    }
+    for(a=100;a<=999;a++)
+        {
+        for(b=100;b<=999;b++)
+            {
+            d=a*b;
+            
+            if(d>101100)
+            {
+                f1=d%10;
+                temp1=d/10;
+                f2=temp1%10;
+                temp2=temp1/10;
+                f3=temp2%10;
+                temp3=temp2/10;
+                f4=temp3%10;
+                temp4=temp3/10;
+                f5=temp4%10;
+                temp5=temp4/10;
+                f6=temp5%10;
+                temp6=temp5/10;
+            if(f1==f6&&f2==f5&&f3==f4)
+            {
+                n=f1*100000+f2*10000+f3*1000+f4*100+f5*10+f6;
+                if(n<N)
+                {
+                    if(n>=l)
+                    {
+                        l=n;
+
+                    }
+                    else
+                        continue;
+                }
+
+            }
+            }
+           else
+            continue;
+        }
+        }
+          printf("%d\n",l);
+        l=0;
+    }
+      return 0;
+    }
+  
+
