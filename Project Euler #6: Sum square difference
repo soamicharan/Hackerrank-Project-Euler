@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    long long int t,N,a,b,c=0,d=0,e,f,g,h,i,temp;
+    scanf("%llu",&t);
+    for(temp=1;temp<=t;temp++)
+        {
+        scanf("%d",&N);
+        for(a=1;a<=N;a++)
+            {
+            b=a*a;
+            c=c+b;
+            d=d+a;
+        }
+        e=d*d;
+        f=e-c;
+        printf("%llu\n",f);c=0;d=0;
+    }
+    return 0;
+}
