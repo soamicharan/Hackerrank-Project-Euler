@@ -1,0 +1,64 @@
+import java.io.*;
+import java.util.Scanner;
+import java.math.BigInteger;
+
+public class Solution {
+public static BigInteger M,bpow,bans,bdig,b1,b2,asd,b3,comp;
+  public static int a,T,temp,N,power,c,t,t1,K,j=1,p,o,w;
+    public static void main(String[] args) {
+       Scanner in = new Scanner(System.in);
+        
+         b1= new BigInteger("10");
+         comp = new BigInteger("0");
+         bans = new BigInteger("1");
+         BigInteger[] arr = new BigInteger[10000];
+         BigInteger[] fans = new BigInteger[10000];
+         T=in.nextInt();
+         for(temp=1;temp<=T;temp++)
+         {
+             N=in.nextInt();
+             
+             power=N-1;
+             K=in.nextInt();
+             o=K;
+             M=in.nextBigInteger();
+             for(a=1;a<=N;a++)
+             {
+                  bpow=b1.pow(power);
+                 if(a!=1)
+                 {
+                     b2=M.divide(bpow);
+                     arr[a]=b2.remainder(b1);
+                 }
+                 else
+                 {
+                   arr[a]=M.divide(bpow);
+                 }
+                 power--;     
+             }
+            
+                 for(c=1;c<=N-K+1;c++)
+                 {
+                     for(p=c;p<=o;p++)
+                         
+                     {
+                     bans=arr[p].multiply(bans);
+                     
+                     }
+                     fans[c]=bans;
+                     
+                     w=fans[c].compareTo(comp);
+                     if(w>=0)
+                     {
+                         comp=fans[c];
+                     }
+                        
+                      o++;bans=new BigInteger("1");
+                     
+                     
+                 }
+                 System.out.println(comp);comp= new BigInteger("0");
+             }
+           
+    }
+}
